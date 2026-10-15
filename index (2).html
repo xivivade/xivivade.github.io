@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Юбилеем, Людмила! 49 лет</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(-45deg, #fce4ec, #f8bbd0, #f48fb1, #e1bee7, #b39ddb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+      padding: 20px;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-bottom: 50px;
+      position: relative;
+      z-index: 20;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.5);
+      animation: fadeIn 1.5s ease-out, pulseGlow 4s ease-in-out infinite;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+      50% { box-shadow: 0 20px 60px rgba(186, 104, 200, 0.4); }
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #ad1457;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      animation: titleBounce 3s ease-in-out infinite;
+      background: linear-gradient(45deg, #ad1457, #6a1b9a, #d81b60, #ad1457);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: titleBounce 3s ease-in-out infinite, gradientText 5s ease infinite;
+    }
+    @keyframes titleBounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    @keyframes gradientText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin-bottom: 1.5rem;
+      animation: h2Float 4s ease-in-out infinite;
+    }
+    @keyframes h2Float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .age {
+      font-size: 4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #6a1b9a, #d81b60, #f06292, #6a1b9a);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientText 3s ease infinite, agePulse 2s ease-in-out infinite;
+    }
+    @keyframes agePulse {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.08); filter: brightness(1.2); }
+    }
+    p {
+      font-size: 1.2rem;
+      color: #4a148c;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      animation: fadeInText 2s ease-out;
+    }
+    @keyframes fadeInText {
+      from { opacity: 0; letter-spacing: 2px; }
+      to { opacity: 1; letter-spacing: normal; }
+    }
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .photo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .photo-item img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 4px solid #ce93d8;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: transform 0.4s;
+      animation: photoSway 5s ease-in-out infinite;
+    }
+    @keyframes photoSway {
+      0%, 100% { transform: rotate(-1deg) scale(1); box-shadow: 0 10px 20px rgba(206, 147, 216, 0.3); }
+      50% { transform: rotate(1deg) scale(1.02); box-shadow: 0 15px 35px rgba(206, 147, 216, 0.6); }
+    }
+    .photo-item img:hover {
+      transform: scale(1.08) rotate(0deg);
+      border-color: #f06292;
+    }
+    .photo-caption {
+      font-size: 1.1rem;
+      color: #6a1b9a;
+      font-weight: 600;
+      animation: h2Float 3s ease-in-out infinite;
+    }
+    .heart {
+      color: #d81b60;
+      font-size: 2rem;
+      animation: heartBeat 1s infinite;
+      display: inline-block;
+    }
+    @keyframes heartBeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.3); }
+      50% { transform: scale(1.1); }
+      75% { transform: scale(1.4); }
+      100% { transform: scale(1); }
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #6a1b9a;
+      opacity: 0.8;
+      text-align: center;
+      animation: h2Float 4s ease-in-out infinite;
+    }
+
+    /* ====== АНИМАЦИИ ФОНА ====== */
+
+    /* Конфетти (прямоугольные) */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      opacity: 0.85;
+      border-radius: 2px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+    @keyframes fall {
+      to { transform: translateY(105vh) rotate(1080deg); }
+    }
+
+    /* Круглые блёстки */
+    .sparkle {
+      position: fixed;
+      top: -10px;
+      border-radius: 50%;
+      opacity: 0.9;
+      animation: fallSparkle linear infinite;
+      z-index: 2;
+      box-shadow: 0 0 10px currentColor;
+    }
+    @keyframes fallSparkle {
+      to { transform: translateY(105vh) rotate(360deg); }
+    }
+
+    /* Летающие сердечки */
+    .floating-heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 24px;
+      opacity: 0.7;
+      animation: floatUp linear infinite;
+      z-index: 3;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-110vh) translateX(50px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Воздушные шары */
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      font-size: 40px;
+      animation: balloonUp linear infinite;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+    @keyframes balloonUp {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 0.9; }
+      50% { transform: translateX(30px); }
+      100% { transform: translateY(-120vh) translateX(-30px); opacity: 0; }
+    }
+
+    /* Мерцающие звёзды */
+    .star {
+      position: fixed;
+      color: #fff;
+      font-size: 20px;
+      animation: twinkle 2s ease-in-out infinite;
+      z-index: 2;
+      pointer-events: none;
+      text-shadow: 0 0 10px #fff, 0 0 20px #f06292;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* Вращающиеся лепестки */
+    .petal {
+      position: fixed;
+      top: -30px;
+      font-size: 20px;
+      animation: petalFall linear infinite;
+      z-index: 2;
+      pointer-events: none;
+    }
+    @keyframes petalFall {
+      0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.9; }
+      50% { transform: translateX(80px) rotate(360deg); }
+      100% { transform: translateY(105vh) translateX(-40px) rotate(720deg); opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      .age { font-size: 3rem; }
+      .photo-item img { width: 100%; max-width: 300px; height: auto; }
+      .balloon { font-size: 28px; }
+      .floating-heart { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Секция 1: Приветствие -->
+    <div class="card">
+      <h1>С Днём Рождения, Людмила!</h1>
+      <div class="age">49 лет</div>
+      <p>Дорогая наша Людмила! Сегодня твой день. 49 лет — это прекрасный возраст мудрости, красоты и душевной теплоты.</p>
+    </div>
+
+    <!-- Секция 2: Про работу -->
+    <div class="card">
+      <h2>Мастер своего дела</h2>
+      <p>Мы знаем, как много ты трудилась. Твоя работа всегда была примером ответственности, упорства и настоящего профессионализма. Ты отдавала себя делу полностью, и мы невероятно гордимся твоими успехами и достижениями.</p>
+      <p>Твоё трудолюбие и золотые руки вызывают искреннее восхищение у всех, кто тебя знает.</p>
+    </div>
+
+    <!-- Секция 3: Про любовь -->
+    <div class="card">
+      <h2>Всеми любимая</h2>
+      <p>Тебя любят все: семья, друзья, коллеги. Ты — тот самый человек, который всегда выслушает, поддержит, поможет и согреет своим теплом.</p>
+      <p>Твоя доброта, забота и отзывчивость делают мир вокруг тебя лучше. Мы очень ценим каждое мгновение, проведённое с тобой. <span class="heart">❤️</span></p>
+    </div>
+
+    <!-- Секция 4: Фотография -->
+    <div class="card">
+      <h2>Наши мгновения</h2>
+      <div class="photo-gallery">
+        <div class="photo-item">
+          <img src="family.png" alt="Наша семья">
+          <div class="photo-caption">Наша дружная семья</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция 5: Пожелания -->
+    <div class="card">
+      <h2>Пожелания</h2>
+      <p>Желаем тебе крепкого здоровья, счастья, любви и исполнения всех желаний. Пусть каждый день приносит радость, а близкие всегда будут рядом!</p>
+      <p>Спасибо за твою доброту и заботу. Мы тебя очень любим!</p>
+      <div class="footer">Троицк, 2026 • С любовью, твоя семья</div>
+    </div>
+
+  </div>
+
+  <script>
+    // ====== КОНФЕТТИ (прямоугольные) ======
+    const confettiColors = ['#f06292', '#ba68c8', '#4dd0e1', '#ffb74d', '#aed581', '#ff8a80', '#ea80fc'];
+    for (let i = 0; i < 60; i++) {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      c.style.animationDuration = (Math.random() * 4 + 3) + 's';
+      c.style.animationDelay = Math.random() * 5 + 's';
+      c.style.width = Math.random() * 8 + 6 + 'px';
+      c.style.height = Math.random() * 12 + 6 + 'px';
+      document.body.appendChild(c);
+    }
+
+    // ====== КРУГЛЫЕ БЛЁСТКИ ======
+    for (let i = 0; i < 40; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      const size = Math.random() * 10 + 4;
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      s.style.background = s.style.color;
+      s.style.animationDuration = (Math.random() * 5 + 4) + 's';
+      s.style.animationDelay = Math.random() * 6 + 's';
+      document.body.appendChild(s);
+    }
+
+    // ====== ЛЕТАЮЩИЕ СЕРДЕЧКИ ======
+    const hearts = ['❤️', '💖', '💕', '💗', '💝', '💞'];
+    for (let i = 0; i < 25; i++) {
+      const h = document.createElement('div');
+      h.className = 'floating-heart';
+      h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.fontSize = (Math.random() * 20 + 16) + 'px';
+      h.style.animationDuration = (Math.random() * 8 + 8) + 's';
+      h.style.animationDelay = Math.random() * 10 + 's';
+      document.body.appendChild(h);
+    }
+
+    // ====== ВОЗДУШНЫЕ ШАРЫ ======
+    const balloons = ['🎈', '🎈', '🎈', '🎀', '🎁'];
+    for (let i = 0; i < 15; i++) {
+      const b = document.createElement('div');
+      b.className = 'balloon';
+      b.textContent = balloons[Math.floor(Math.random() * balloons.length)];
+      b.style.left = Math.random() * 100 + 'vw';
+      b.style.fontSize = (Math.random() * 25 + 25) + 'px';
+      b.style.animationDuration = (Math.random() * 12 + 12) + 's';
+      b.style.animationDelay = Math.random() * 15 + 's';
+      document.body.appendChild(b);
+    }
+
+    // ====== МЕРЦАЮЩИЕ ЗВЁЗДЫ ======
+    for (let i = 0; i < 30; i++) {
+      const st = document.createElement('div');
+      st.className = 'star';
+      st.textContent = '✦';
+      st.style.left = Math.random() * 100 + 'vw';
+      st.style.top = Math.random() * 100 + 'vh';
+      st.style.fontSize = (Math.random() * 15 + 8) + 'px';
+      st.style.animationDelay = Math.random() * 3 + 's';
+      document.body.appendChild(st);
+    }
+
+    // ====== ВРАЩАЮЩИЕСЯ ЛЕПЕСТКИ ======
+    const petals = ['🌸', '🌺', '🌷', '💮', '🌹'];
+    for (let i = 0; i < 20; i++) {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.textContent = petals[Math.floor(Math.random() * petals.length)];
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.fontSize = (Math.random() * 15 + 15) + 'px';
+      p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+      p.style.animationDelay = Math.random() * 12 + 's';
+      document.body.appendChild(p);
+    }
+  </script>
+</body>
+</html>
