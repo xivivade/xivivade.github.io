@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Юбилеем, Людмила!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-bottom: 50px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.5);
+      animation: fadeIn 1.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #ad1457;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #6a1b9a;
+      margin-bottom: 1.5rem;
+    }
+    .age {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #6a1b9a;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #4a148c;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .photo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .photo-item img {
+      width: 350px; /* Сделал фото чуть больше, так как оно теперь одно */
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 4px solid #ce93d8;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
+    .photo-item img:hover {
+      transform: scale(1.05);
+    }
+    .photo-caption {
+      font-size: 1.1rem;
+      color: #6a1b9a;
+      font-weight: 600;
+    }
+    .heart {
+      color: #d81b60;
+      font-size: 2rem;
+      animation: pulse 1.5s infinite;
+      display: inline-block;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #6a1b9a;
+      opacity: 0.8;
+      text-align: center;
+    }
+    /* Плеер */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+    /* Конфетти */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background: #f06292;
+      opacity: 0.8;
+      border-radius: 2px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+    @keyframes fall {
+      to { transform: translateY(100vh) rotate(720deg); }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      .photo-item img { width: 100%; max-width: 300px; height: auto; }
+      .music-player { bottom: 10px; right: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Музыкальный плеер -->
+  <div class="music-player">
+    <audio controls loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Твой браузер не поддерживает аудио.
+    </audio>
+  </div>
+
+  <div class="container">
+    
+    <!-- Секция 1: Приветствие -->
+    <div class="card">
+      <h1>С Днём Рождения, Людмила!</h1>
+      <div class="age">50 лет</div>
+      <p>Дорогая наша Людмила! Сегодня твой юбилей. 50 лет — это прекрасный возраст мудрости, красоты и душевной теплоты.</p>
+    </div>
+
+    <!-- Секция 2: Про работу -->
+    <div class="card">
+      <h2>Мастер своего дела</h2>
+      <p>Мы знаем, как много ты трудилась. Твоя работа всегда была примером ответственности, упорства и настоящего профессионализма. Ты отдавала себя делу полностью, и мы невероятно гордимся твоими успехами и достижениями.</p>
+      <p>Твоё трудолюбие и золотые руки вызывают искреннее восхищение у всех, кто тебя знает.</p>
+    </div>
+
+    <!-- Секция 3: Про любовь -->
+    <div class="card">
+      <h2>Всеми любимая</h2>
+      <p>Тебя любят все: семья, друзья, коллеги. Ты — тот самый человек, который всегда выслушает, поддержит, поможет и согреет своим теплом.</p>
+      <p>Твоя доброта, забота и отзывчивость делают мир вокруг тебя лучше. Мы очень ценим каждое мгновение, проведённое с тобой. <span class="heart">❤️</span></p>
+    </div>
+
+    <!-- Секция 4: Фотография (осталась только семья) -->
+    <div class="card">
+      <h2>Наши мгновения</h2>
+      <div class="photo-gallery">
+        <div class="photo-item">
+          <img src="family.png" alt="Наша семья">
+          <div class="photo-caption">Наша дружная семья</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Секция 5: Пожелания -->
+    <div class="card">
+      <h2>Пожелания</h2>
+      <p>Желаем тебе крепкого здоровья, счастья, любви и исполнения всех желаний. Пусть каждый день приносит радость, а близкие всегда будут рядом!</p>
+      <p>Спасибо за твою доброту и заботу. Мы тебя очень любим!</p>
+      <div class="footer">Троицк, 2026 • С любовью, твоя семья</div>
+    </div>
+
+  </div>
+
+  <script>
+    // Создаём конфетти
+    const colors = ['#f06292', '#ba68c8', '#4dd0e1', '#ffb74d', '#aed581'];
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      confetti.style.animationDelay = Math.random() * 2 + 's';
+      confetti.style.width = Math.random() * 8 + 6 + 'px';
+      confetti.style.height = confetti.style.width;
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
